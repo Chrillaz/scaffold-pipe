@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { hasScript, getScript, getScriptArgs } = require( '../utils' );
+const { hasScript, getScript, getScriptArgs } = require( '../utils/utils' );
 const spawn = require( 'cross-spawn' );
 
 const runScript = ( scriptName ) => {

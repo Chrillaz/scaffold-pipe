@@ -1,6 +1,6 @@
 const { sync: spawn } = require( 'cross-spawn' ),
       { sync: resolveBin } = require( 'resolve-bin' ),
-      { getScriptArgs } = require( '../utils' );
+      { getScriptArgs } = require( '../utils/utils' );
 
 const { status } = spawn(
   resolveBin( 'webpack' ),

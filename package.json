@@ -19,7 +19,8 @@
   "files": [
     "bin",
     "config",
-    "scripts"
+    "scripts",
+    "utils"
   ],
   "bin": {
     "scaffold": "./bin/scaffold.js"
