@@ -17,7 +17,7 @@ const config = {
     public: './scripts/public.ts'
   },
   output: {
-    path: path.resolve( process.cwd(), 'assets' ),
+    path: path.resolve( process.cwd(), 'public' ),
     filename: 'js/[name].min.js',
     // publicPath: config.publicPath
   },

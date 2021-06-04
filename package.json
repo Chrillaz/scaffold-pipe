@@ -1,7 +1,6 @@
 {
-  "name": "scaffold-pipe",
+  "name": "@chrillaz/scaffold-pipe",
   "version": "1.0.0",
-  "main": "src/helper.js",
   "description": "Webpack config for scaffold",
   "repository": {
     "type": "git",
@@ -26,10 +25,13 @@
     "scaffold": "./bin/scaffold.js"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
+    "@wordpress/browserslist-config": "^2.7.0",
     "autoprefixer": "^10.2.5",
+    "browserslist": "^4.14.5",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "cross-spawn": "^7.0.3",
     "css-loader": "^5.2.1",
@@ -50,5 +52,8 @@
     "webpack": "^5.33.2",
     "webpack-cli": "^4.6.0",
     "webpack-remove-empty-scripts": "^0.7.1"
-  }
+  },
+  "browserlist": [
+    "extends @wordpress/browserlist-config" 
+  ]
 }
