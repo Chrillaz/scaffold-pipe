@@ -13,7 +13,7 @@ const arguments = {
 
 const hasScript = scriptName => scripts.includes( scriptName );
 
-const getScript = scriptName => path.join( path.resolve( __dirname, 'scripts' ), `${ scriptName }.js` );
+const getScript = scriptName => path.join( path.dirname( __dirname ), 'scripts', `${ scriptName }.js` );
 
 const getScriptArgs = () => {
 
