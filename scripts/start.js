@@ -1,12 +1,12 @@
 const { sync: spawn } = require( 'cross-spawn' ),
-      { sync: resolveBin } = require( 'resolve-bin' );
+      { sync: resolveBin } = require( 'resolve-bin' ),
+      { getScriptArgs } = require( '../utils' );
 
 const { status } = spawn(
   resolveBin( 'webpack' ),
   [
-    '--mode=development', 
-    '--watch',
-    '--config=node_modules/scaffold-pipe/config/webpack.config.js'
+    ...getScriptArgs(), 
+    '--watch'
   ],
   {
     stdio: 'inherit',

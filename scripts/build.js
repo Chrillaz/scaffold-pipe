@@ -1,3 +1,17 @@
-console.log( 'BUILD SCRIPT' );
+const { sync: spawn } = require( 'cross-spawn' ),
+      { sync: resolveBin } = require( 'resolve-bin' ),
+      { getScriptArgs } = require( '../utils' );
 
-return 0;
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+
+const { status } = spawn(
+  resolveBin( 'webpack' ),
+  [
+    ...getScriptArgs(), 
+  ],
+  {
+    stdio: 'inherit',
+  }
+);
+
+process.exit( status );
