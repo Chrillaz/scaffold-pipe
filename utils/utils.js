@@ -29,8 +29,11 @@ const getScriptArgs = () => {
   return scriptArgs;
 }
 
+const getPackage = () => path.resolve( process.cwd(), 'package.json' );
+
 module.exports = {
   hasScript,
   getScript,
-  getScriptArgs
+  getScriptArgs,
+  getPackage
 }

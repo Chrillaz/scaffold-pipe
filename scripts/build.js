@@ -1,6 +1,12 @@
-const { sync: spawn } = require( 'cross-spawn' ),
+const fs = require( 'fs' ),
+      { sync: spawn } = require( 'cross-spawn' ),
       { sync: resolveBin } = require( 'resolve-bin' ),
-      { getScriptArgs } = require( '../utils/utils' );
+      { getScriptArgs, getPackage } = require( '../utils/utils' );
+
+const package = fs.readFileSync( getPackage() );
+const packageJson = JSON.parse( package );
+
+console.log( packageJson );
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
