@@ -4,7 +4,7 @@ const fs = require( 'fs' ),
       { getScriptArgs, getPackage, buildScaffoldHeaders } = require( '../utils/utils' ),
       package = fs.readFileSync( getPackage() ),
       packageJson = JSON.parse( package ),
-      styles = `${process.cwd()}/styles.css`;
+      styles = `${process.cwd()}/style.css`;
 
 const headers = [
   '/*',
