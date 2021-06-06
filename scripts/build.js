@@ -1,10 +1,10 @@
 const fs = require( 'fs' ),
       { sync: spawn } = require( 'cross-spawn' ),
       { sync: resolveBin } = require( 'resolve-bin' ),
-      { getScriptArgs, getPackage, buildScaffoldHeaders } = require( '../utils/utils' );
-
-const package = fs.readFileSync( getPackage() );
-const packageJson = JSON.parse( package );
+      { getScriptArgs, getPackage, buildScaffoldHeaders } = require( '../utils/utils' ),
+      package = fs.readFileSync( getPackage() ),
+      packageJson = JSON.parse( package ),
+      styles = `${process.cwd()}/styles.css`;
 
 const headers = [
   '/*',
@@ -21,12 +21,14 @@ const headers = [
   ' */\n',
 ].join( '\n' );
 
-if ( ! fs.existsSync( './style.css' ) ) {
+if ( fs.existsSync( styles ) ) {
   
-  fs.writeFile( process.cwd() + 'style.css', headers, err => 
-    console.log( err ? err : 'Theme style.css generated! \n' ) 
-  ); 
+  fs.unlinkSync( styles );
 }
+
+fs.writeFileSync( styles, headers, err => 
+  console.log( err ? err : 'Theme style.css generated! \n' ) 
+); 
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
