@@ -1,32 +1,39 @@
 # Scaffold Build Pipeline
 
-Opinionated webpack config to be used with [scaffold-theme](https://github.com/Chrillaz/scaffold-theme) for compileing TypeScript.
-heavily inspired by [@wordpress/scripts](https://github.com/WordPress/gutenberg/tree/e9f09838360909fe795351771a4fafc6fef13513/packages/scripts)
-By default the config expects inputs to live in "./resources" folder.
-Outputs css and js within "./public" folder.
+Opinionated webpack config to be used with [scaffold-theme](https://github.com/Chrillaz/scaffold-theme).
 
-### Install
+Heavily inspired by [@wordpress/scripts](https://github.com/WordPress/gutenberg/tree/e9f09838360909fe795351771a4fafc6fef13513/packages/scripts).
+Uses and compiles TypeScript
 
-```
+### Installation
+
+```bash
 npm i chrillaz/scaffold-pipe --save-dev
 ```
 
 ### Scripts
 
-scffold start,  scaffold build
+```json
+"scripts": {
+  "start": "scaffold start",
+  "build": "scaffold build
+}
+```
 
 ### Example folder structure from scaffold-theme
 
-/public
-/--css
-/--js
-/resources
-/--scripts
-/--styles
+By default it expects input files from "resources" folder and outputs compiled assets to "public" folder.
+
+|-- public
+|   |--css
+|   |--js
+|-- resources
+|   |--scripts
+|   |--styles
 
 ### Example override
 
-Whole config can be overwritten by including the default config in themes own webpack.config.
+Config can be overwritten by including the default config in themes own webpack.config.
 the --config argument then needs to point to themes webpack.config
 
 ```
