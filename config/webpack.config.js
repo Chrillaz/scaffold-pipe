@@ -19,7 +19,6 @@ const config = {
   output: {
     path: path.resolve( process.cwd(), 'public' ),
     filename: 'js/[name].min.js',
-    // publicPath: config.publicPath
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
@@ -35,7 +34,7 @@ const config = {
         use: {
           loader: require.resolve( 'ts-loader' ),
           options: {
-            context,
+            context: path.resolve( process.cwd(), 'resources/scripts' ),
             configFile: path.resolve( __dirname, 'tsconfig.json' )
           }
         }
@@ -44,7 +43,7 @@ const config = {
         test: /\.s[c|a]ss$/,
         use: [
           MiniCSSExtractPlugin.loader, 
-          require.resolve('css-loader'),
+          require.resolve( 'css-loader' ),
           {
             loader: require.resolve( 'postcss-loader' ),
             options: {
