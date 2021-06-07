@@ -24,12 +24,14 @@ npm i chrillaz/scaffold-pipe --save-dev
 
 By default it expects input files from "resources" folder and outputs compiled assets to "public" folder.
 
+```bash
 |-- public
 |   |--css
 |   |--js
 |-- resources
 |   |--scripts
 |   |--styles
+```
 
 ### Example override
 
