@@ -36,7 +36,7 @@ const makeThemeHeaders = package => {
 
   const packageJson = JSON.parse( package );
 
-  const styles = `${process.cwd()/styleMedia.css}`;
+  const styles = `${process.cwd()}/style.css`;
 
   const headers = [
     '/*',
