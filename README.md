@@ -36,7 +36,7 @@ By default it expects input files from "resources" folder and outputs compiled a
 Config can be overwritten by including the default config in themes own webpack.config.
 the --config argument then needs to point to themes webpack.config
 
-```
+```node
 const defaultConfig = require( '@chrillaz/scaffold-pipe/config/webpack.config.js' );
 
 module.exports = {
@@ -50,7 +50,7 @@ module.exports = {
 
 and then in package.json
 
-```
+```json
 "scripts": {
   "start": "scaffold start --config=path/to/theme/webpack.config"
 }
@@ -58,7 +58,7 @@ and then in package.json
 
 The build script also generates the themes headers to style.css by looking att following properties from package.json
 
-```
+```js
     '/*',
     ' * Theme Name: ' + packageJson.themeName,
     ' * Theme URI: ' + packageJson.homepage,
