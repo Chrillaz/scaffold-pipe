@@ -1,6 +1,6 @@
 {
   "name": "@chrillaz/scaffold-pipe",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Webpack config for scaffold",
   "repository": "https://github.com/Chrillaz/scaffold-pipe",
   "author": "Christoffer öhman",

@@ -1,6 +1,6 @@
 const fs = require( 'fs' ),
       path = require( 'path' ),
-      { makeThemeHeaders } = require( '../utils/utils' ),
+      { getPackage, makeThemeHeaders } = require( '../utils/utils' ),
       { CleanWebpackPlugin } = require( 'clean-webpack-plugin' ),
       MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' ),
       RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts'),
