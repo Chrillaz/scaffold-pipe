@@ -1,5 +1,6 @@
 const args = require( 'minimist' )( process.argv.slice( 2 ) ),
-      path = require( 'path' );
+      path = require( 'path' ),
+      fs = require( 'fs' );
 
 const scripts = [
   'start',
@@ -31,9 +32,36 @@ const getScriptArgs = () => {
 
 const getPackage = () => path.resolve( process.cwd(), 'package.json' );
 
+const makeThemeHeaders = package => {
+
+  const packageJson = JSON.parse( package );
+
+  const styles = `${process.cwd()/styleMedia.css}`;
+
+  const headers = [
+    '/*',
+    ' * Theme Name: ' + packageJson.themeName,
+    ' * Theme URI: ' + packageJson.homepage,
+    ' * Author: ' + packageJson.author,
+    ' * Author URI: ' + packageJson.authorUri,
+    ' * Description: ' + packageJson.description,
+    ' * Version: ' + packageJson.version,
+    ' * License: ' + packageJson.license,
+    ' * Licence URI: ' + packageJson.licenseUri,
+    ' * Text Domain: ' + packageJson.name,
+    ' * Template: ',
+    ' */\n',
+  ].join( '\n' );
+  
+  fs.writeFileSync( styles, headers, err => 
+    console.log( err ? err : 'Theme style.css generated! \n' ) 
+  ); 
+}
+
 module.exports = {
   hasScript,
   getScript,
   getScriptArgs,
-  getPackage
+  getPackage,
+  makeThemeHeaders
 }

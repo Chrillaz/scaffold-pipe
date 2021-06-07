@@ -1,13 +1,29 @@
-const path = require( 'path' ),
+const fs = require( 'fs' ),
+      path = require( 'path' ),
+      { makeThemeHeaders } = require( '../utils/utils' ),
       { CleanWebpackPlugin } = require( 'clean-webpack-plugin' ),
       MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' ),
-      RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+      RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts'),
+      package = fs.readFileSync( getPackage() );
 
 const development = process.env.NODE_ENV !== 'production';
 
 const mode = development ? 'development' : 'production';
 
 const context = path.resolve( process.cwd(), 'resources' );
+
+! development && makeThemeHeaders( package );
+
+const plugins = [
+  new CleanWebpackPlugin({
+    dry: true,
+    cleanOnceBeforeBuildPatterns: [ '**/*', '!icons', '!icons/**/*' ]
+  }),
+  new RemoveEmptyScriptsPlugin({ extensions:['css', 'scss', 'sass'] }),
+  new MiniCSSExtractPlugin({
+    filename: 'css/[name].css'
+  })
+].filter( Boolean )
 
 const config = {
   context,
@@ -71,16 +87,7 @@ const config = {
       }
     ]
   },
-  plugins: [
-    new CleanWebpackPlugin({
-      dry: true,
-      cleanOnceBeforeBuildPatterns: [ '**/*', '!icons', '!icons/**/*' ]
-    }),
-    new RemoveEmptyScriptsPlugin({ extensions:['css', 'scss', 'sass'] }),
-    new MiniCSSExtractPlugin({
-      filename: 'css/[name].css'
-    })
-  ].filter( Boolean )
+  plugins
 };
 
 module.exports = config;
