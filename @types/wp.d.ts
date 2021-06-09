@@ -1,7 +1,7 @@
 import _Hooks from './hooks/createHooks'
 import { WPElement } from './element/create-interpolate-element'
 
-export default interface Wp {
+export interface Wp {
   blockEditor: any;
   blocks: any;
   components: any;
