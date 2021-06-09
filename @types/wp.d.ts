@@ -1,6 +1,3 @@
-import _Hooks from './hooks/createHooks'
-import { WPElement } from './element/create-interpolate-element'
-
 export interface Wp {
   blockEditor: any;
   blocks: any;
@@ -9,7 +6,7 @@ export interface Wp {
   data: any;
   editor: any;
   editPost: any;
-  element: WPElement;
-  hooks: typeof _Hooks;
+  element: any;
+  hooks: any;
   plugins: any;
 }
