@@ -16,7 +16,7 @@ npm i chrillaz/scaffold-pipe --save-dev
 ```json
 "scripts": {
   "start": "scaffold start",
-  "build": "scaffold build
+  "build": "scaffold build"
 }
 ```
 
@@ -61,7 +61,7 @@ and then in package.json
 
 ```json
 "scripts": {
-  "start": "scaffold start --config=path/to/theme/webpack.config"
+  "start": "scaffold start --config path/to/theme/webpack.config"
 }
 ```
 
