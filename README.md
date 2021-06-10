@@ -33,6 +33,13 @@ By default it expects input files from "resources" folder and outputs compiled a
 |   |--styles
 ```
 
+### Flags
+
+|Flag      | value           |
+|----------|-----------------|
+| --config | string string[] |
+| --entry  | string string[] |
+
 ### Example override
 
 Config can be overwritten by including the default config in themes own webpack.config.

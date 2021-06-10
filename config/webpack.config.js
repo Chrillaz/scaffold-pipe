@@ -29,9 +29,6 @@ const config = {
   context,
   mode,
   devtool: development ? 'inline-source-map' : 'source-map',
-  entry: {
-    public: './scripts/public.ts'
-  },
   output: {
     path: path.resolve( process.cwd(), 'public' ),
     filename: 'js/[name].min.js',
@@ -50,7 +47,7 @@ const config = {
         use: {
           loader: require.resolve( 'ts-loader' ),
           options: {
-            context: path.resolve( process.cwd(), 'resources/scripts' ),
+            context,
             configFile: path.resolve( __dirname, 'tsconfig.json' )
           }
         }
