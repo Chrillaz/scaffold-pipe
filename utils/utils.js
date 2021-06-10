@@ -8,8 +8,14 @@ const scripts = [
 ];
 
 const arguments = {
-  config: { type: 'string', default: '--config=node_modules/scaffold-pipe/config/webpack.config.js' },
-  // tsconfig: { type: 'string', default: '--tsconfig=node_modules/scaffold-pipe/config/tsconfig.json' }
+  config: { 
+    type: 'string', 
+    default: path.join( path.dirname( __dirname ), 'config', 'webpack.config.js' )
+  },
+  entry: {
+    type: 'string',
+    default: './scripts/index.ts'
+  }
 }
 
 const hasScript = scriptName => scripts.includes( scriptName );
@@ -24,7 +30,7 @@ const getScriptArgs = () => {
 
     args.hasOwnProperty( name ) 
       ? scriptArgs.push( `--${name}=${args[name]}` )
-      : scriptArgs.push( arguments[name].default );
+      : scriptArgs.push( `--${name}=${arguments[name].default}` );
   }
 
   return scriptArgs;
