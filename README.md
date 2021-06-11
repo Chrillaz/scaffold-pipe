@@ -16,7 +16,7 @@ npm i chrillaz/scaffold-pipe --save-dev
 ```json
 "scripts": {
   "start": "scaffold start",
-  "build": "scaffold build
+  "build": "scaffold build"
 }
 ```
 
@@ -50,7 +50,7 @@ const defaultConfig = require( '@chrillaz/scaffold-pipe/config/webpack.config.js
 
 module.exports = {
   ...defaultConfig,
-  output: {
+  entry: {
     mainjs: './js/main.ts',
     maincss: './scss/main.scss
   }

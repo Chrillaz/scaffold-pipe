@@ -30,7 +30,7 @@ const getScriptArgs = () => {
 
     args.hasOwnProperty( name ) 
       ? scriptArgs.push( `--${name}=${args[name]}` )
-      : scriptArgs.push( `--${name}=${arguments[name].default}` );
+      : 'entry' !== name ? scriptArgs.push( `--${name}=${arguments[name].default}` ) : undefined;
   }
 
   return scriptArgs;
