@@ -1,6 +1,6 @@
 {
   "name": "@chrillaz/scaffold-pipe",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Webpack config for scaffold",
   "repository": "https://github.com/Chrillaz/scaffold-pipe",
   "author": "Christoffer öhman",
@@ -42,6 +42,8 @@
     "resolve-bin": "^0.4.0",
     "sass-loader": "^10.0.2",
     "style-loader": "^2.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-twbs-bootstrap": "^2.2.1",
     "stylelint-webpack-plugin": "^2.1.1",
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.4",
@@ -52,9 +54,5 @@
   },
   "browserlist": [
     "extends @wordpress/browserlist-config"
-  ],
-  "devDependencies": {
-    "stylelint": "^13.13.1",
-    "stylelint-config-twbs-bootstrap": "^2.2.1"
-  }
+  ]
 }

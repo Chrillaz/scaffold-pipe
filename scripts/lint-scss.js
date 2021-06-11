@@ -1,5 +1,6 @@
-const { sync: spawn } = require( 'cross-spawn' );
-const { sync: resolveBin } = require( 'resolve-bin' );
+const { sync: spawn } = require( 'cross-spawn' ),
+      { sync: resolveBin } = require( 'resolve-bin' ),
+      path = require( 'path' );
  
 const result = spawn(
   resolveBin( 'stylelint' ),
