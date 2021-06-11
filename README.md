@@ -50,7 +50,7 @@ const defaultConfig = require( '@chrillaz/scaffold-pipe/config/webpack.config.js
 
 module.exports = {
   ...defaultConfig,
-  output: {
+  entry: {
     mainjs: './js/main.ts',
     maincss: './scss/main.scss
   }
