@@ -4,7 +4,8 @@ const args = require( 'minimist' )( process.argv.slice( 2 ) ),
 
 const scripts = [
   'start',
-  'build'
+  'build',
+  'lint-scss'
 ];
 
 const arguments = {
@@ -23,7 +24,7 @@ const hasScript = scriptName => scripts.includes( scriptName );
 const getScript = scriptName => path.join( path.dirname( __dirname ), 'scripts', `${ scriptName }.js` );
 
 const getScriptArgs = () => {
-
+  console.log(args)
   scriptArgs = [];
 
   for ( const name in arguments ) {
