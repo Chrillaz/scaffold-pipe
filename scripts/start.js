@@ -1,11 +1,11 @@
 const { sync: spawn } = require( 'cross-spawn' ),
       { sync: resolveBin } = require( 'resolve-bin' ),
-      { getScriptArgs } = require( '../utils/utils' );
+      { webpackArgs } = require( '../utils/utils' );
 
 const { status } = spawn(
   resolveBin( 'webpack' ),
   [
-    ...getScriptArgs(), 
+    ...webpackArgs(), 
     '--watch'
   ],
   {

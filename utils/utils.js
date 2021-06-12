@@ -2,44 +2,45 @@ const args = require( 'minimist' )( process.argv.slice( 2 ) ),
       path = require( 'path' ),
       fs = require( 'fs' );
 
-const scripts = [
-  'start',
-  'build',
-  'lint-scss'
-];
+const rootDir = () => path.resolve( './' );
+      
+const getConfig = name => path.join( path.dirname( __dirname ), 'config', name );
 
-const arguments = {
-  config: { 
-    type: 'string', 
-    default: path.join( path.dirname( __dirname ), 'config', 'webpack.config.js' )
+const getScript = name => path.join( path.dirname( __dirname ), 'scripts', `${name}.js` );
+
+const scriptExists = scriptName => fs.existsSync( getScript( scriptName ) );
+
+const defaults = {
+  webpack: {
+    config: getConfig( 'webpack.config.js' )
   },
-  entry: {
-    type: 'string',
-    default: './scripts/index.ts'
+  stylelint: {
+    config: getConfig( '.stylelintrc' ),
+    'ignore-path': getConfig( '.stylelintignore' )
   }
 }
 
-const hasScript = scriptName => scripts.includes( scriptName );
+const parseArgs = arguments => {
 
-const getScript = scriptName => path.join( path.dirname( __dirname ), 'scripts', `${ scriptName }.js` );
+  const newArgs = { ...arguments };
 
-const getScriptArgs = () => {
-  console.log(args)
-  scriptArgs = [];
+  for ( const name in args ) {
 
-  for ( const name in arguments ) {
-
-    args.hasOwnProperty( name ) 
-      ? scriptArgs.push( `--${name}=${args[name]}` )
-      : 'entry' !== name ? scriptArgs.push( `--${name}=${arguments[name].default}` ) : undefined;
+    name !== '_' ? newArgs[name] = args[name] : false;
   }
 
-  return scriptArgs;
+  return Object.keys( newArgs ).map( prop => `--${prop}=${newArgs[prop]}` );
 }
 
-const getPackage = () => path.resolve( process.cwd(), 'package.json' );
+const cliArgs = () => parseArgs( args );
+
+const webpackArgs = () => parseArgs( defaults.webpack );
+
+const stylelintArgs = () => parseArgs( defaults.stylelint );
 
 const makeThemeHeaders = package => {
+
+  const package = fs.readFileSync( path.resolve( rootDir(), 'package.json' ) );
 
   const packageJson = JSON.parse( package );
 
@@ -66,9 +67,11 @@ const makeThemeHeaders = package => {
 }
 
 module.exports = {
-  hasScript,
+  rootDir,
+  scriptExists,
   getScript,
-  getScriptArgs,
-  getPackage,
+  cliArgs,
+  webpackArgs,
+  stylelintArgs,
   makeThemeHeaders
 }
