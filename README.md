@@ -80,6 +80,7 @@ Your own .stylelinntrc and .stylelintignore can be provided from project if the 
 "scripts": {
   "start": "scaffold lint-styles --config path/to/.stylelintrc --ignore-path path/to/.stylelintignore",
 }
+```
 
 ### Theme css
 
