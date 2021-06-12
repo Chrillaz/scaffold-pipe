@@ -7,7 +7,6 @@ const result = spawn(
   resolveBin( 'stylelint' ),
   [
     ...stylelintArgs(),
-    '--fix',
     path.resolve( rootDir(), './resources/styles/' )
   ],
   { 
