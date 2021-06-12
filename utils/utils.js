@@ -38,7 +38,7 @@ const webpackArgs = () => parseArgs( defaults.webpack );
 
 const stylelintArgs = () => parseArgs( defaults.stylelint );
 
-const makeThemeHeaders = package => {
+const makeThemeHeaders = () => {
 
   const package = fs.readFileSync( path.resolve( rootDir(), 'package.json' ) );
 
