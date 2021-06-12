@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const { hasScript, getScript, getScriptArgs } = require( '../utils/utils' );
+const { scriptExists, getScript, cliArgs } = require( '../utils/utils' );
 const spawn = require( 'cross-spawn' );
 
-const runScript = ( scriptName ) => {
+const runScript = scriptName => {
 
   if ( ! scriptName ) {
 		
@@ -12,17 +12,16 @@ const runScript = ( scriptName ) => {
 		exit( 1 );
 	}
 
-	if ( ! hasScript( scriptName ) ) {
+	if ( ! scriptExists( scriptName ) ) {
 		
 		console.log( `Ops.. looks like "${ scriptName }" is not available.` );
-    console.log( `Maybee try one of these "${ scripts.join(',') }"`)
 		
     exit( 1 );
 	}
 
 	const { status } = spawn.sync( 'node', [ 
       getScript( scriptName ),
-      ...getScriptArgs()
+      ...cliArgs()
     ],
 		{
 			stdio: 'inherit',

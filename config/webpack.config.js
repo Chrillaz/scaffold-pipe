@@ -1,10 +1,9 @@
 const fs = require( 'fs' ),
       path = require( 'path' ),
-      { getPackage, makeThemeHeaders } = require( '../utils/utils' ),
+      { makeThemeHeaders } = require( '../utils/utils' ),
       { CleanWebpackPlugin } = require( 'clean-webpack-plugin' ),
       MiniCSSExtractPlugin = require( 'mini-css-extract-plugin' ),
-      RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts'),
-      package = fs.readFileSync( getPackage() );
+      RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 
 const development = process.env.NODE_ENV !== 'production';
 
@@ -12,7 +11,7 @@ const mode = development ? 'development' : 'production';
 
 const context = path.resolve( process.cwd(), 'resources' );
 
-! development && makeThemeHeaders( package );
+! development && makeThemeHeaders();
 
 const plugins = [
   new CleanWebpackPlugin({
