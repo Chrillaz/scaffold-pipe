@@ -1,13 +1,12 @@
-const path = require( 'path' ),
-      { sync: spawn } = require( 'cross-spawn' ),
+const { sync: spawn } = require( 'cross-spawn' ),
       { sync: resolveBin } = require( 'resolve-bin' ),
-      { stylelintArgs, rootDir } = require( '../utils/utils' );
+      { stylelintArgs } = require( '../utils/utils' );
 
 const result = spawn(
   resolveBin( 'stylelint' ),
   [
     ...stylelintArgs(),
-    path.resolve( rootDir(), './resources/styles/' )
+    '**/*.{css,scss}'
   ],
   { 
     stdio: 'inherit' 
