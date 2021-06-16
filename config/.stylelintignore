@@ -1,3 +1,4 @@
 **/*.min.css
+assets
 public
 vendor
