@@ -1,58 +1,58 @@
 {
-  "name": "@chrillaz/scaffold-pipe",
-  "version": "1.1.5",
-  "description": "Webpack config for scaffold",
-  "repository": "https://github.com/Chrillaz/scaffold-pipe",
-  "author": "Christoffer öhman",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Chrillaz/scaffold-pipe/issues"
-  },
-  "homepage": "https://github.com/Chrillaz/scaffold-pipe#readme",
-  "engines": {
-    "node": ">=12",
-    "npm": ">=6.9"
-  },
-  "files": [
-    "bin",
-    "config",
-    "scripts",
-    "utils"
-  ],
-  "bin": {
-    "scaffold": "./bin/scaffold.js"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "dependencies": {
-    "@wordpress/browserslist-config": "^2.7.0",
-    "autoprefixer": "^10.2.5",
-    "browserslist": "^4.14.5",
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
-    "cross-spawn": "^7.0.3",
-    "css-loader": "^5.2.1",
-    "file-loader": "^6.2.0",
-    "mini-css-extract-plugin": "^1.4.1",
-    "minimist": "^1.2.5",
-    "node-sass": "^4.14.1",
-    "postcss": "^8.2.10",
-    "postcss-loader": "^5.2.0",
-    "resolve-bin": "^0.4.0",
-    "sass-loader": "^10.0.2",
-    "style-loader": "^2.0.0",
-    "stylelint": "^13.13.1",
-    "stylelint-config-twbs-bootstrap": "^2.2.1",
-    "stylelint-webpack-plugin": "^2.1.1",
-    "ts-loader": "^8.1.0",
-    "typescript": "^4.2.4",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.33.2",
-    "webpack-cli": "^4.6.0",
-    "webpack-remove-empty-scripts": "^0.7.1"
-  },
-  "browserlist": [
-    "extends @wordpress/browserlist-config"
-  ]
-}
+    "name": "@chrillaz/wordpress-scripts",
+    "version": "1.1.6",
+    "description": "Webpack config for Wordpress Noor Theme",
+    "repository": "https://github.com/Chrillaz/scaffold-scripts",
+    "author": "Christoffer öhman",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Chrillaz/scaffold-scripts/issues"
+    },
+    "homepage": "https://github.com/Chrillaz/scaffold-scripts#readme",
+    "engines": {
+      "node": ">=12",
+      "npm": ">=6.9"
+    },
+    "files": [
+      "bin",
+      "config",
+      "scripts",
+      "utils"
+    ],
+    "bin": {
+      "scaffold": "./bin/scaffold.js"
+    },
+    "publishConfig": {
+      "access": "public",
+      "registry": "https://npm.pkg.github.com/@chrillaz"
+    },
+    "dependencies": {
+      "@wordpress/browserslist-config": "^2.7.0",
+      "autoprefixer": "^10.2.5",
+      "browserslist": "^4.14.5",
+      "clean-webpack-plugin": "^4.0.0-alpha.0",
+      "cross-spawn": "^7.0.3",
+      "css-loader": "^5.2.1",
+      "file-loader": "^6.2.0",
+      "mini-css-extract-plugin": "^1.4.1",
+      "minimist": "^1.2.5",
+      "node-sass": "^4.14.1",
+      "postcss": "^8.2.10",
+      "postcss-loader": "^5.2.0",
+      "resolve-bin": "^0.4.0",
+      "sass-loader": "^10.0.2",
+      "style-loader": "^2.0.0",
+      "stylelint": "^13.13.1",
+      "stylelint-config-twbs-bootstrap": "^2.2.1",
+      "stylelint-webpack-plugin": "^2.1.1",
+      "ts-loader": "^8.1.0",
+      "typescript": "^4.2.4",
+      "url-loader": "^4.1.1",
+      "webpack": "^5.33.2",
+      "webpack-cli": "^4.6.0",
+      "webpack-remove-empty-scripts": "^0.7.1"
+    },
+    "browserlist": [
+      "extends @wordpress/browserlist-config"
+    ]
+  }

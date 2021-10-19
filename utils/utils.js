@@ -56,7 +56,7 @@ const makeThemeHeaders = () => {
     ' * Version: ' + packageJson.version,
     ' * License: ' + packageJson.license,
     ' * Licence URI: ' + packageJson.licenseUri,
-    ' * Text Domain: ' + packageJson.name,
+    ' * Text Domain: ' + packageJson.themeName.split( ' ' ).join( '-' ).toLowerCase(),
     ' * Template: ',
     ' */\n',
   ].join( '\n' );
