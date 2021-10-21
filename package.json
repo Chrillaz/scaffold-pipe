@@ -1,5 +1,5 @@
 {
-    "name": "@chrillaz/wordpress-scripts",
+    "name": "@chrillaz/scaffold-scripts",
     "version": "1.1.6",
     "description": "Webpack config for Wordpress Noor Theme",
     "repository": "https://github.com/Chrillaz/scaffold-scripts",
